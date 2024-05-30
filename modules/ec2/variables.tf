@@ -7,7 +7,9 @@ variable "random_pet" {
 }
 variable "private_subnet" {
 }
-variable "security_gr" {
+variable "security_gr_ec2" {
 }
 variable "public_subnet" {
+}
+variable "security_gr_bastion" {
 }

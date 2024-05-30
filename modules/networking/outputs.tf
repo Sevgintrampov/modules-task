@@ -13,3 +13,6 @@ output "security_groups_lb_id" {
 output "security_groups_ec2_id" {
   value = aws_security_group.ec2_sg.id
 }
+output "security_groups_bastion_id" {
+  value = aws_security_group.bastion_sg.id
+}

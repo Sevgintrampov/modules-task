@@ -29,7 +29,7 @@ resource "aws_instance" "nginx_instance" {
   instance_type   = var.instance_type
   key_name = aws_key_pair.private_ec2.key_name
   subnet_id       = var.private_subnet
-  vpc_security_group_ids = [var.security_gr]
+  vpc_security_group_ids = [var.security_gr_ec2]
   user_data       = file("userdata.tpl")
 
   tags = {
@@ -41,7 +41,7 @@ resource "aws_instance" "bastion_host" {
   key_name = aws_key_pair.bastion.key_name
   instance_type   = var.instance_type
   subnet_id       = var.public_subnet
-  vpc_security_group_ids = [var.security_gr]
+  vpc_security_group_ids = [var.security_gr_bastion]
 
   tags = {
     Name = "bastion-host-${var.random_pet}"
